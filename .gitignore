@@ -2,5 +2,6 @@
 /images/*
 /logs/*
 /themes/casper/*
+/themes/Massive/assets/*
 !/themes/Massive/partials/*
 !/themes/Massive/*.hbs
