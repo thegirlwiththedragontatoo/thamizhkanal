@@ -1,0 +1,41 @@
+routes:
+  /:
+    permalink: /{slug}/
+    template: home
+
+  /thirukkural/:
+    permalink: /thirukkural/{slug}/
+    template: thirukkural
+
+  /arathuppaal/:
+    controller: channel
+    filter: tag:arathuppaal
+    template: thirukkural-athigaram
+
+collections:
+  /bharathidasan-padalgal/:
+    permalink: /bharathidasan-padalgal/{slug}/
+    filter: tag:barathidasan-padalgal
+    template: index
+
+  /pavalareru-padalgal/:
+    permalink: /pavalareru-padalgal/{slug}/
+    filter: tag:pavalareru-perunchithiranar
+    template: index
+
+  /bharathiyaar-paadalgal/:
+    permalink: /bharathiyaar-paadalgal/{slug}/
+    filter: tag:bharathiyaar-paadalgal
+    template: index
+
+  # /thirukkural/:
+  #   permalink: /thirukkural/{slug}/
+  #   filter: tag:thirukkural
+  #   template: index
+
+  /home/:
+    permalink: /{slug}/
+    template: home
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

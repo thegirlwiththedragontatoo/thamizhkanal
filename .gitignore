@@ -1,0 +1,10 @@
+/apps/*
+/images/*
+/logs/*
+/themes/*
+!/themes/Massive/partials/*
+!/themes/Massive/default.hbs
+!/themes/Massive/home.hbs
+!/themes/Massive/index.hbs
+!/themes/Massive/thirukkural.hbs
+
