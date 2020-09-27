@@ -1,8 +1,6 @@
 /apps/*
 /images/*
 /logs/*
-/themes/*
+/themes/casper/*
 !/themes/Massive/partials/*
 !/themes/Massive/*.hbs
-
-content/themes/Massive/default.hbs
