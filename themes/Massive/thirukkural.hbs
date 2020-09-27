@@ -16,13 +16,17 @@ into the {body} of the default.hbs template --}}
         <ul id="myUL">
           <li><span class="caret">அறத்துப்பால்</span>
             <ul class="nested">
-            {{#get "posts" filter="tag:arathuppaal"}}
-                {{#foreach posts}}
-                    <li><a href="{{url}}">{{title}}</a></li>
-                {{/foreach}}
-            {{/get}}
-              </ul>
-                </li>
+                <li><span class="caret">இல்லறவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:arathuppaal+tag:ilaraviyal"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                        </li>
+                </ul>
+            </li>
               <li><span class="caret">பொருட்பால்</span>
                 <ul class="nested">
                 {{#get "posts" filter="tag:Porutpaal"}}
