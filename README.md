@@ -1,2 +1,2 @@
 # Thamizhkanal
-test auto deploy 5
+test auto deploy 6
