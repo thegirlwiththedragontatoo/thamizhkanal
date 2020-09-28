@@ -1,10 +1,14 @@
+{{!< default}}
+{{!-- The tag above means: insert everythin in this file
+into the {body} of the default.hbs template --}}
+{{!-- Main --}}
+<main id="main">
 <p>Dev</p>
 <ul class="links">
     {{#get "posts" filter="tag:menu" }}
-        {{#foreach featured_post}}
-        <li class="nav-{{slug}} {{#if current}}active{{/if}}">
-            <a href="{{url absolute="true"}}">{{label}}</a>
-        </li>
+        {{#foreach posts}}
+            {{content}}
         {{/foreach}}
     {{/get}}
 </ul>
+</main>
