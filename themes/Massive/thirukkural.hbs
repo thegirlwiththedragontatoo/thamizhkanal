@@ -24,7 +24,34 @@ into the {body} of the default.hbs template --}}
                         {{/foreach}}
                     {{/get}}
                       </ul>
-                        </li>
+                    </li>
+                    <li><span class="caret">பாயிரவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:arathuppaal"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">துறவறவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:arathuppaal+tag:"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">ஊழியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:arathuppaal+tag:"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
                 </ul>
             </li>
               <li><span class="caret">பொருட்பால்</span>

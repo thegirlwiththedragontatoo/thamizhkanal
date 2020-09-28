@@ -28,6 +28,10 @@ collections:
     filter: tag:bharathiyaar-paadalgal
     template: index
 
+  /dev/:
+    permalink: /{slug}/
+    template: dev
+
   # /thirukkural/:
   #   permalink: /thirukkural/{slug}/
   #   filter: tag:thirukkural
