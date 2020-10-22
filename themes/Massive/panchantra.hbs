@@ -1,0 +1,105 @@
+{{!< default}}
+{{!-- The tag above means: insert everythin in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Main --}}
+<main id="main">
+
+    <section class="post">
+    {{#get "posts" filter="tag:panchatantra-bio" limit="1"}}
+        {{#foreach posts}}
+            <header class="major">
+                <h2>{{title}}</h2>
+            </header>
+            <p class="img main">
+            <img alt="Panchantra Stories" src="{{img_url feature_image}}" style="width: 100%;">
+            </p>
+            <div class="content">
+                {{content}}
+            </div>
+
+
+        {{/foreach}}
+    {{/get}}
+</section>
+    <section class="post">
+
+
+    <div class="content">
+
+
+        <ul id="myUL">
+            <li><span class="caret">நட்புப் பிரித்தல்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:natpu-pirithal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+            <li><span class="caret">நட்பு உண்டாக்குதல்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:natpu-undakkudhal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+            <li><span class="caret">அடுத்துக் கெடுத்தல்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:aduthu-keduthal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+            <li><span class="caret">பெற்றதை இழக்கச் செய்தல்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:petradhai-izhakka-seidhal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+            <li><span class="caret">ஆராயாத செயல் தவிர்த்தல்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:arayadha-seyal-thavirthal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="post-footer">
+
+            <div class="authors">
+                {{#foreach authors}}
+                <a class="author-box" href="{{url}}">
+                    {{#if profile_image}}
+                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    {{/if}}
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">{{name}}</h5>
+                        {{#if bio}}
+                        <p>{{bio}}</p>
+                        {{else}}
+                        <p>Read more posts by this author.</p>
+                        {{/if}}
+                    </section>
+                </a>
+                {{/foreach}}
+            </div>
+
+        </footer>
+    </section>
+
+
+</main>

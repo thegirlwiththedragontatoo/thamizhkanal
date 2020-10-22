@@ -1,0 +1,138 @@
+{{!< default}}
+{{!-- The tag above means: insert everythin in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Main --}}
+<main id="main">
+
+
+    <section class="post">
+
+
+    <div class="content">
+        <!-- <p class="img-container">
+            <img alt="Thirukkural" src="https://www.thamizhkanal.com/assets/images/thirukural.jpg?v=4ce27e68dc" style="width: 400px; height:400px">
+        </p> -->
+        <ul id="myUL">
+          <li><span class="caret">அறத்துப்பால்</span>
+            <ul class="nested">
+                <li><span class="caret">துறவற இயல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-arathupaal+tag:n-thuravarail" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="caret">பொருட்பால்</span>
+                <ul class="nested">
+                    <li><span class="caret">துறவற இயல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-thuravarail" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">நட்பியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-natpiyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">இன்பவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-inbaviyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">துன்பியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-thunbaviyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">பொதுவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-pothuviyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">பன்னெறியியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-porutpaal+tag:n-panindrayil" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+
+                    </ul>
+                </li>
+               <li><span class="caret">காமத்துப்பால்</span>
+                    <ul class="nested">
+                      <li><span class="caret">இன்ப துன்ப வியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-kamathupaal+tag:n-inbathunbviyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">இன்ப வியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:n-kamathupaal+tag:n-inbaviyal" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    </ul>
+                </li>
+        </ul>
+    </div>
+
+    <footer class="post-footer">
+
+            <div class="authors">
+                {{#foreach authors}}
+                <a class="author-box" href="{{url}}">
+                    {{#if profile_image}}
+                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    {{/if}}
+                    <section class="author-box-content">
+                        <div class="author-box-label">Author</div>
+                        <h5 class="author-box-name">{{name}}</h5>
+                        {{#if bio}}
+                        <p>{{bio}}</p>
+                        {{else}}
+                        <p>Read more posts by this author.</p>
+                        {{/if}}
+                    </section>
+                </a>
+                {{/foreach}}
+            </div>
+
+        </footer>
+
+
+</main>

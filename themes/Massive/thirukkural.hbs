@@ -13,30 +13,32 @@ into the {body} of the default.hbs template --}}
         <p class="img-container">
             <img alt="Thirukkural" src="https://www.thamizhkanal.com/assets/images/thirukural.jpg?v=4ce27e68dc" style="width: 400px; height:400px">
         </p>
+
         <ul id="myUL">
           <li><span class="caret">அறத்துப்பால்</span>
             <ul class="nested">
+                <li><span class="caret">பாயிரவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:arathuppaal+tag:payiraviyal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
                 <li><span class="caret">இல்லறவியல்</span>
                     <ul class="nested">
-                    {{#get "posts" filter="tag:arathuppaal+tag:ilaraviyal"}}
+                    {{#get "posts" filter="tag:arathuppaal+tag:illaraviyal" limit ="all" order="title asc"}}
                         {{#foreach posts}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{/foreach}}
                     {{/get}}
                       </ul>
                     </li>
-                    <li><span class="caret">பாயிரவியல்</span>
-                    <ul class="nested">
-                    {{#get "posts" filter="tag:arathuppaal"}}
-                        {{#foreach posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                        {{/foreach}}
-                    {{/get}}
-                      </ul>
-                    </li>
+
                     <li><span class="caret">துறவறவியல்</span>
                     <ul class="nested">
-                    {{#get "posts" filter="tag:arathuppaal+tag:"}}
+                    {{#get "posts" filter="tag:arathuppaal+tag:thuravaraviyal" limit ="all" order="title asc"}}
                         {{#foreach posts}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{/foreach}}
@@ -45,7 +47,7 @@ into the {body} of the default.hbs template --}}
                     </li>
                     <li><span class="caret">ஊழியல்</span>
                     <ul class="nested">
-                    {{#get "posts" filter="tag:arathuppaal+tag:"}}
+                    {{#get "posts" filter="tag:arathuppaal+tag:Uzhiyal" limit ="all" order="title asc"}}
                         {{#foreach posts}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{/foreach}}
@@ -56,18 +58,56 @@ into the {body} of the default.hbs template --}}
             </li>
               <li><span class="caret">பொருட்பால்</span>
                 <ul class="nested">
-                {{#get "posts" filter="tag:Porutpaal"}}
-                    {{#foreach posts}}
-                        <li><a href="{{url}}">{{title}}</a></li>
-                    {{/foreach}}
-                {{/get}}
+                    <li><span class="caret">அரசியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:porutpaal+tag:arasiyal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">அங்கவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:porutpaal+tag:angaviyal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">ஒழிபியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:porutpaal+tag:ozhibhiyal" limit ="all" order="published_at asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+
                     </ul>
                 </li>
-               <li><span class="caret"></span><a href="#">Kamampaal</a>
+               <li><span class="caret">காமத்துப்பால்</span>
                     <ul class="nested">
-                      <li>Athigaram 5</li>
-                      <li>Athigaram 6</li>
-                      <li>Athigaram 7</li>
+                      <li><span class="caret">களவியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:kamathuppaal+tag:kalaviyal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
+                    <li><span class="caret">கற்பியல்</span>
+                    <ul class="nested">
+                    {{#get "posts" filter="tag:kamathuppaal+tag:karpiyal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                      </ul>
+                    </li>
                     </ul>
                 </li>
         </ul>

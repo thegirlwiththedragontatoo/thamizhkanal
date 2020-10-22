@@ -7,6 +7,18 @@ routes:
     permalink: /thirukkural/{slug}/
     template: thirukkural
 
+  /ovaiyaar/:
+    permalink: /ovaiyaar/{slug}/
+    template: ovaiyaar
+
+  /naladiyar/:
+    permalink: /naladiyar/{slug}/
+    template: naladiyar
+
+  /panchatantra/:
+    permalink: /panchatantra/{slug}/
+    template: panchantra
+
   /arathuppaal/:
     controller: channel
     filter: tag:arathuppaal
@@ -16,12 +28,54 @@ collections:
   /bharathidasan-padalgal/:
     permalink: /bharathidasan-padalgal/{slug}/
     filter: tag:barathidasan-padalgal
-    template: index
+    template: barathithasan
 
   /pavalareru-padalgal/:
     permalink: /pavalareru-padalgal/{slug}/
     filter: tag:pavalareru-perunchithiranar
     template: index
+
+  /thenali-raman/:
+    permalink: /thenali-raman/{slug}/
+    filter: tag:thenali-raman-kadhaigal
+    template: index
+    order: tilte asc
+
+  /vikramadhithan/:
+    permalink: /vikramadhithan/{slug}/
+    filter: tag:vikramadhithan-kadhaigal
+    template: index
+    order: tilte asc
+
+  /mulla/:
+    permalink: /mulla/{slug}/
+    filter: tag:mulla
+    template: index
+    order: tilte asc
+
+  /akbarbirbal/:
+    permalink: /akbarbirbal/{slug}/
+    filter: tag:akbarbirbal
+    template: index
+    order: tilte asc
+
+  /mariyadai-raman/:
+    permalink: /mariyadai-raman/{slug}/
+    filter: tag:mariyadai-raman
+    template: index
+    order: tilte asc
+
+  /kids/:
+    permalink: /kids/{slug}/
+    filter: tag:kids
+    template: index
+    order: tilte asc
+
+  /natrinai/:
+    permalink: /natrinai/{slug}/
+    filter: tag:natrinai
+    template: index
+    order: tilte asc
 
   /bharathiyaar-paadalgal/:
     permalink: /bharathiyaar-paadalgal/{slug}/
@@ -40,6 +94,7 @@ collections:
   /home/:
     permalink: /{slug}/
     template: home
+
 taxonomies:
   tag: /tag/{slug}/
   author: /author/{slug}/

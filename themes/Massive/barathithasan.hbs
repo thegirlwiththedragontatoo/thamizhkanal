@@ -1,0 +1,47 @@
+{{!< default}}
+{{!-- The tag above means: insert everythin in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Main --}}
+<main id="main">
+<section class="post">
+    {{#get "posts" filter="tag:baradhithasan-bio" limit="1"}}
+        {{#foreach posts}}
+            <header class="major">
+                <h1>{{title}}</h1>
+            </header>
+            <p class="img-container">
+            <div class="content">
+                {{content}}
+            </div>
+            </p>
+
+        {{/foreach}}
+    {{/get}}
+    </section>
+
+    {{!-- Posts --}}
+    <section class="posts">
+
+        {{#foreach posts}}
+        <article>
+            <header>
+                <span class="date">{{date format="MMM D, YYYY"}}</span>
+                <h2><a href="{{url}}">{{title}}</a></h2>
+            </header>
+            {{#if feature_image}}
+            <!-- <a href="{{url}}" class="image fit"><img src="{{img_url feature_image}}" alt="{{title}}" /></a> -->
+            {{/if}}
+            <p>{{excerpt words="33"}}</p>
+            <ul class="actions special">
+                <li><a href="{{url}}" class="button"> மேலும்...</a></li>
+            </ul>
+        </article>
+        {{/foreach}}
+
+    </section>
+
+    {{!-- Pagination --}}
+    {{pagination}}
+
+</main>

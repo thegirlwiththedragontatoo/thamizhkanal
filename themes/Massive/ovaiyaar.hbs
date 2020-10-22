@@ -1,0 +1,59 @@
+{{!< default}}
+{{!-- The tag above means: insert everythin in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Main --}}
+<main id="main">
+
+
+    <section class="post">
+
+
+    <div class="content">
+        <p class="img-container">
+            <img alt="Avaiyaar" src="https://www.thamizhkanal.com/assets/images/avaiyaar.jpg?v=4ce27e68dc" style="width: 400px; height:400px">
+
+        <ul id="myUL">
+            {{#get "posts" filter="tag:ovaiyaar" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li class="caret_a"><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+            {{/get}}
+          <!-- <li> -->
+            <!-- <span class="caret">ஆத்திசூடி</span> -->
+            <!-- <a href="https://www.thamizhkanal.com/kttvull-vaalllttu/">ஆத்திசூடி</a> -->
+
+            <!-- <ul class="nested">
+                    {{#get "posts" filter="tag:ovaiyaar+tag:aathichudi" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul> -->
+            <!-- </li> -->
+            <!--   <li><span class="caret">கொன்றை வேந்தன்</span>
+                <ul class="nested">
+                    {{#get "posts" filter="tag:ovaiyaar+tag:kondrai-vendhan" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+
+                    </ul>
+                </li>
+               <li><span class="caret"></span><a href="#">மூதுரை</a>
+                    <ul class="nested">
+                        {{#get "posts" filter="tag:ovaiyaar+tag:moodhurai" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                    </ul>
+                </li> -->
+        </ul>
+        </p>
+    </div>
+
+
+
+</main>

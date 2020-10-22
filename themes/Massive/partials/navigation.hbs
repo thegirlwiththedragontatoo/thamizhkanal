@@ -2,47 +2,149 @@
 
     <ul class="links">
             <div class="nav-home dropdown">
-                <li class="dropbtn"><a href="https://www.thamizhkanal.com/">Home</a></li>
+                <li class="dropbtn"><a href="https://www.thamizhkanal.com/">முகப்பு</a></li>
+            </div>
+            <div class="nav-tamil-eluthukal dropdown">
+                {{#get "posts" filter="tag:thamizh-eluthukal" limit =1}}
+                        {{#foreach posts}}
+                        <li class="dropbtn"><a href="{{url}}">{{title}}</a></li>
+                            <!-- <li><a href="{{url}}">{{title}}</a></li> -->
+                        {{/foreach}}
+                    {{/get}}
+
             </div>
             <div class="nav-tirukkurrll dropdown">
                 <li class="dropbtn"><a href="https://www.thamizhkanal.com/thirukkural/">திருக்குறள்</a></li>
+            </div>
+            <div class="nav-tamilpadalgal dropdown">
+                <li class="dropbtn"><a href="#"> இலக்கியப் பாடல்கள் </a></li>
                 <div class="dropdown-content">
-                    <a href="https://www.thamizhkanal.com/arathuppaal/">அறத்துப்பால்</a>
-                    <a href="https://www.thamizhkanal.com/porutupaal/">பொருட்பால்</a>
+                    <div class="nav-ovaiyaar dropdown2">
+                        <li class="dropbtn2"><a href="https://www.thamizhkanal.com/ovaiyaar/">ஔவையார் நூல்கள்</a></li>
+                        <!-- <div class="dropdown-content2">
+                            <li><a href="#">ஆத்திசூடி</a></li>
+                            <li><a href="#">கொன்றை வேந்தன்</a></li>
+                            <li><a href="#">மூதுரை</a></li>
+                        </div> -->
+                    </div>
+                    <li><a href="https://www.thamizhkanal.com/bharathiyaar-paadalgal/">பாரதியார் பாடல்கள்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/bharathidasan-padalgal/">பாரதிதாசன் பாடல்கள்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/pavalareru-padalgal/">பாவலரேறு பாடல்கள்</a></li>
+                    <!-- {{#get "posts" filter="tag:agananooru" limit ="all"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>ஔவையார் நூல்கள்
+                        {{/foreach}}
+                    {{/get}} -->
                 </div>
             </div>
-            <div class="nav-paartiyaar-paattlkll dropdown">
+            <!-- <div class="nav-paartiyaar-paattlkll dropdown">
                 <li class="dropbtn"><a href="https://www.thamizhkanal.com/bharathiyaar-paadalgal/">பாரதியார் பாடல்கள்</a></li>
             </div>
             <div class="nav-paartitaacnnn-paattlkll dropdown">
                 <li class="dropbtn"><a href="https://www.thamizhkanal.com/bharathidasan-padalgal/">பாரதிதாசன் பாடல்கள்</a></li>
             </div>
             <div class="nav-paavlreerru-perunycittirnnnaar-paattlkll dropdown">
-                <li class="dropbtn"><a href="https://www.thamizhkanal.com/pavalareru-padalgal/">பாவலரேறு பெருஞ்சித்திரனார் பாடல்கள்</a></li>
-            </div>
+                <li class="dropbtn"><a href="https://www.thamizhkanal.com/pavalareru-padalgal/">பாவலரேறு பாடல்கள்</a></li>
+            </div> -->
             <div class="av-naalttiyaar dropdown">
-                <li class="dropbtn"><a href="https://www.thamizhkanal.com/naalttiyaar/">நாலடியார்</a></li>
+                <li class="dropbtn"><a href="https://www.thamizhkanal.com/naladiyar/">நாலடியார்</a></li>
             </div>
-            <div class="nav-aknaannnuurru dropdown">
+            <!-- <div class="nav-aknaannnuurru dropdown">
                 <li class="dropbtn"><a href="#">அகநானூறு</a></li>
+                <div class="dropdown-content">
+                    {{#get "posts" filter="tag:agananooru" limit ="all"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
             </div>
             <div class="nav-purananuurru dropdown">
-                <li class="dropbtn"><a href="">புறநானூறு</a></li>
-            </div>
+                <li class="dropbtn"><a href="#">புறநானூறு</a></li>
+                <div class="dropdown-content">
+                    {{#get "posts" filter="tag:purananooru" limit ="all"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
+            </div> -->
             <div class="nav-keeladi dropdown">
                 <li class="dropbtn"><a href="#">தமிழர் பெருமை</a></li>
                 <div class="dropdown-content">
-                    <a href="https://www.thamizhkanal.com/p/9b3a2b3f-5ee2-4a97-a8b4-4c8eaeb100ea/">கீழடி</a>
-                    <a href="https://www.thamizhkanal.com/tamilar-vanigham/">தமிழர் வாணிகம்- கடல் வாணிகம்</a>
+                    {{#get "posts" filter="tag:thamizhar-perumai" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                    <!-- <a href="https://www.thamizhkanal.com/p/9b3a2b3f-5ee2-4a97-a8b4-4c8eaeb100ea/">கீழடி</a>
+                    <a href="https://www.thamizhkanal.com/tamilar-vanigham/">தமிழர் வாணிகம்- கடல் வாணிகம்</a> -->
+                </div>
+            </div>
+            <div class="nav-veeram dropdown">
+                <li class="dropbtn"><a href="#">தமிழர் வீரம்</a></li>
+                <div class="dropdown-content">
+                    {{#get "posts" filter="tag:thamizhar-veeram" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                        {{/foreach}}
+                    {{/get}}
+                    <!-- <a href="https://www.thamizhkanal.com/p/9b3a2b3f-5ee2-4a97-a8b4-4c8eaeb100ea/">கீழடி</a>
+                    <a href="https://www.thamizhkanal.com/tamilar-vanigham/">தமிழர் வாணிகம்- கடல் வாணிகம்</a> -->
+                </div>
+            </div>
+            <div class="nav-neethikathaigal dropdown">
+                <li class="dropbtn"><a href="#">நீதிக்கதைகள்</a></li>
+                <div class="dropdown-content">
+                    <li><a href="https://www.thamizhkanal.com/thenali-raman/">தெனாலி ராமன்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/vikramadhithan/">விக்ரமாதித்தன்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/mulla/">முல்லா</a></li>
+                    <li><a href="https://www.thamizhkanal.com/akbarbirbal/">அக்பர் பீர்பால்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/mariyadai-raman/">மரியாதை ராமன்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/panchatantra/">பஞ்சதந்திர கதைகள்</a></li>
+                    <li><a href="https://www.thamizhkanal.com/kids/">சிறுவர் கதைகள்</a></li>
+
+                    <!-- {{#get "posts" filter="tag:needhi-kadhaigal" limit ="all" order="title asc"}}
+                        {{#foreach posts}} விக்ரமாதித்தன் வேதாளம் கதைகள்- vikramadhithan kadhaigal
+
+                            <li><a href="{{url}}">{{title}}</a></li>அக்பர் பீர்பால் கதைகள்(Akbar birbal Stories
+                        {{/foreach}}
+                    {{/get}} -->
+                    <!-- <a href="https://www.thamizhkanal.com/p/9b3a2b3f-5ee2-4a97-a8b4-4c8eaeb100ea/">கீழடி</a>
+                    <a href="https://www.thamizhkanal.com/tamilar-vanigham/">தமிழர் வாணிகம்- கடல் வாணிகம்</a> -->
+                </div>
+            </div>
+            <div class="nav-Ettuthogai dropdown">
+                <li class="dropbtn"><a href="#">எட்டுத்தொகை</a></li>
+
+                <div class="dropdown-content">
+                    <li><a href="https://www.thamizhkanal.com/natrinai/">நற்றிணை</a></li>
+                    <li class="kurunthogai"><a href="#">குறுந்தொகை</a></li>
+                    <li class="ainkurunooru"><a href="#">ஐங்குறுநூறு</a></li>
+                    <li class="padhitruppathu"><a href="#">பதிற்றுப்பத்து</a></li>
+                    <li class="paripaadal"><a href="#">பரிபாடல்</a></li>
+                    <li class="kalithogai"><a href="#">கலித்தொகை</a></li>
+                    <li class=""><a href="#">அகநானூறு</a></li>
+                    <div class="dropdown2">
+                    <li class="dropbtn2"><a href="#">புறநானூறு</a></li>
+                        <div class="dropdown-content2">
+                            {{#get "posts" filter="tag:purananooru" limit ="all"}}
+                                {{#foreach posts}}
+                                    <li><a href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                            {{/get}}
+                        </div>
+                    </div>
+
+                   <!--  {{#get "posts" filter="tag:needhi-kadhaigal" limit ="all" order="title asc"}}
+                        {{#foreach posts}}
+                            <li><a href="{{url}}">{{title}}</a></li>தமிழ் எழுத்துக்கள்
+                        {{/foreach}}
+                    {{/get}} -->
+                    <!-- <a href="https://www.thamizhkanal.com/p/9b3a2b3f-5ee2-4a97-a8b4-4c8eaeb100ea/">கீழடி</a>
+                    <a href="https://www.thamizhkanal.com/tamilar-vanigham/">தமிழர் வாணிகம்- கடல் வாணிகம்</a> -->
                 </div>
             </div>
     </ul>
 
 </nav>
-
- <!-- <ul class="links">புறநானூறு
-    https://www.thamizhkanal.com/ghost/#/editor/post/5f48fa8a873bd1459d4387a3
-        {{#foreach navigation}}
-        <li class="nav-{{slug}} {{#if current}}active{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
-        {{/foreach}}
-    </ul> -->

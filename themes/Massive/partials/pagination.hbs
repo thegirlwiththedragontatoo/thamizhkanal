@@ -1,15 +1,20 @@
 <footer>
     <nav class="pagination" role="navigation">
+        <div id="page-total" style="display:none;">{{pages}}</div>
+        <div id="page-current" style="display:none;">{{page}}</div>
+
         {{#if prev}}
-        <a class="previous newer-posts" href="{{page_url prev}}">Newer Posts</a>
+        <a class="previous newer-posts" href="{{page_url prev}}">முன்புறம்</a>
         {{else}}
         <div class="spacer"></div>
         {{/if}}
-        <span class="page">Page {{page}} of {{pages}}</span>
+        <span id="pagination-list" class="page"></span>
+        <!-- <span class="page">Page {{page}} of {{pages}}</span> -->
         {{#if next}}
-        <a class="next older-posts" href="{{page_url next}}">Older Posts</a>
+        <a class="next older-posts" href="{{page_url next}}">தொடர்ச்சி</a>
         {{else}}
         <div class="spacer"></div>
         {{/if}}
     </nav>
+
 </footer>
